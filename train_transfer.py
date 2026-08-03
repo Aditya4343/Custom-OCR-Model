@@ -94,16 +94,30 @@ def get_device():
     return torch.device("cpu")
 
 
-def evaluate(model, loader, device):
+def evaluate(model, loader, device, idx_to_class=None):
     model.eval()
     correct, total = 0, 0
+    per_class_correct, per_class_total = {}, {}
     with torch.no_grad():
         for x, y in loader:
             x, y = x.to(device), y.to(device)
             pred = model(x).argmax(dim=1)
             correct += (pred == y).sum().item()
             total += y.size(0)
-    return correct / max(total, 1)
+            if idx_to_class is not None:
+                for p, t in zip(pred.tolist(), y.tolist()):
+                    per_class_total[t] = per_class_total.get(t, 0) + 1
+                    if p == t:
+                        per_class_correct[t] = per_class_correct.get(t, 0) + 1
+    acc = correct / max(total, 1)
+    if idx_to_class is not None:
+        print("\nPer-class held-out accuracy (class: correct/total):")
+        for idx in sorted(per_class_total, key=lambda i: -per_class_total[i]):
+            c = idx_to_class[idx]
+            n_correct = per_class_correct.get(idx, 0)
+            n_total = per_class_total[idx]
+            print(f"  {c!r:5} {n_correct}/{n_total}  ({n_correct/n_total:.0%})")
+    return acc
 
 
 def main():
@@ -237,7 +251,8 @@ def main():
         ])
         holdout_ds = GlyphDataset(holdout_X_resized, holdout_y, class_to_idx)
         holdout_loader = DataLoader(holdout_ds, batch_size=args.batch_size)
-        acc = evaluate(model, holdout_loader, device)
+        idx_to_class = {i: c for c, i in class_to_idx.items()}
+        acc = evaluate(model, holdout_loader, device, idx_to_class=idx_to_class)
         print(f"\n=== HONEST HELD-OUT ACCURACY on {len(holdout_X)} real, "
               f"never-trained-on glyphs: {acc:.3f} ===")
         print("This is the number that matters -- everything else "
@@ -248,7 +263,11 @@ def main():
               "helped here.")
 
     torch.save(model.state_dict(), "glyph_classifier.pt")
-    print("Saved model to glyph_classifier.pt")
+    import json
+    with open("glyph_classifier_classes.json", "w") as f:
+        json.dump(classes, f)  # classes[i] == character for output index i
+    print("Saved model to glyph_classifier.pt "
+          "and class mapping to glyph_classifier_classes.json")
 
 
 if __name__ == "__main__":

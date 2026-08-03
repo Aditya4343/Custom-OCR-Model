@@ -30,7 +30,50 @@ from PIL import Image, ImageDraw, ImageFont
 # Config -- adjust FONT_PATH if/when a real matching font becomes available.
 # Everything downstream (training script) is agnostic to this choice.
 # ---------------------------------------------------------------------------
-FONT_PATH = "/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf"
+FONT_PATH = None  # resolved at runtime by find_font() -- see below
+FONT_CANDIDATES = [
+    "/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf",
+    "/usr/share/fonts/truetype/liberation2/LiberationMono-Bold.ttf",
+    "/System/Library/Fonts/Menlo.ttc",              # macOS
+    "C:\\Windows\\Fonts\\consolab.ttf",              # Windows
+]
+
+
+def find_font(override=None):
+    """Search common locations for a bold monospace font. Returns a path,
+    or raises with an actionable message (install instructions) rather
+    than a bare OSError -- font availability differs a lot across
+    Codespaces/local machines/CI images, and this has already broken
+    once on a base image with no fonts installed at all."""
+    if override:
+        if os.path.exists(override):
+            return override
+        raise FileNotFoundError(f"--font-path {override!r} does not exist")
+
+    for path in FONT_CANDIDATES:
+        if os.path.exists(path):
+            return path
+
+    # last resort: search the whole system font tree for anything bold+mono-ish
+    import glob
+    search_roots = ["/usr/share/fonts", "/usr/local/share/fonts",
+                     os.path.expanduser("~/.fonts")]
+    for root in search_roots:
+        for pattern in ("**/*Mono*Bold*.ttf", "**/*mono*bold*.ttf"):
+            hits = glob.glob(os.path.join(root, pattern), recursive=True)
+            if hits:
+                return hits[0]
+
+    raise FileNotFoundError(
+        "No bold monospace font found anywhere on this system.\n"
+        "Fix with ONE of:\n"
+        "  sudo apt-get update && sudo apt-get install -y fonts-freefont-ttf\n"
+        "  sudo apt-get update && sudo apt-get install -y fonts-dejavu-core\n"
+        "  sudo apt-get update && sudo apt-get install -y fonts-liberation\n"
+        "or pass an explicit font file with --font-path /path/to/font.ttf"
+    )
 FONT_RENDER_SIZE = 64          # render large, then downscale -- crisper edges
 GLYPH_SIZE = 32                 # final training image size (square)
 CHARSET = list("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.:-,()/")
@@ -139,15 +182,30 @@ def main():
                           "harvested glyph, so real (accurate) data carries "
                           "meaningful weight against bulk synthetic data")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--font-path", default=None,
+                     help="explicit font file to use instead of "
+                          "auto-searching common system locations")
+    ap.add_argument("--no-stencil-gaps", action="store_true",
+                     help="skip the punch_stencil_gaps() step. Use this "
+                          "when testing a real/exact font match (e.g. an "
+                          "actual ISO 3098 TTF) -- the gap-punching was "
+                          "calibrated as an APPROXIMATION for a mismatched "
+                          "font, and may be actively wrong (hurting, not "
+                          "helping) once you have the real font, since ISO "
+                          "3098 'single-stroke' refers to uniform stroke "
+                          "WIDTH, not gaps in the letterforms. A/B test "
+                          "both ways once you have a real font file.")
     args = ap.parse_args()
 
     os.makedirs(args.out, exist_ok=True)
     rng = np.random.default_rng(args.seed)
-    font = ImageFont.truetype(FONT_PATH, FONT_RENDER_SIZE)
+    resolved_font_path = find_font(args.font_path)
+    print(f"Using font: {resolved_font_path}")
+    font = ImageFont.truetype(resolved_font_path, FONT_RENDER_SIZE)
 
     all_X, all_y, all_src = [], [], []  # src: 'synthetic' or 'real'
 
-    print(f"Rendering base glyphs from {FONT_PATH} ...")
+    print(f"Rendering base glyphs from {resolved_font_path} ...")
     base_glyphs = {}
     for ch in CHARSET:
         g = render_base_glyph(ch, font)
@@ -160,7 +218,7 @@ def main():
           f"({len(base_glyphs)} classes) ...")
     for ch, base in base_glyphs.items():
         for _ in range(args.per_class):
-            gapped = punch_stencil_gaps(base, rng)
+            gapped = base if args.no_stencil_gaps else punch_stencil_gaps(base, rng)
             fixed = to_fixed_size(gapped)
             aug = augment_one(fixed, rng)
             all_X.append(aug)

@@ -1,0 +1,8 @@
+data/
+data_liberation_gaps/
+data_liberation_nogaps/
+data_noto_gaps/
+data_noto_nogaps/
+*.npy
+*.pt
+result.png

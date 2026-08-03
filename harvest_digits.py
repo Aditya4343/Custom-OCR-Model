@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 
-im = Image.open('/mnt/user-data/uploads/result.png').convert('L')
+im = Image.open('result.png').convert('L')
 arr = np.array(im)
 
 row_bounds = [73, 92, 111, 131, 150, 170, 189, 209, 228, 247, 267, 286, 306, 325, 345,
