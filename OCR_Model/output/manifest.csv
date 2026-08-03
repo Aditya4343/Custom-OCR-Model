@@ -1,0 +1,244 @@
+filename,this_pipeline_ocr_text
+merge_0_r0-0_c4-7.png,
+merge_1_r1-1_c4-7.png,REFER DRAWING NO.220729300107
+merge_2_r2-8_c7-7.png,REFER DRAWING NO:521643900110
+merge_3_r9-23_c4-7.png,REFER DRAWING NO:520143900210
+merge_4_r24-24_c4-7.png,REFER DRAWING NO : 517543900194
+merge_5_r25-27_c4-7.png,REFER DRAWING NO : 517443900172
+merge_6_r28-31_c4-7.png,515243900104
+merge_7_r32-32_c4-7.png,REFER DRAWING NO.508043910113
+merge_8_r33-37_c4-7.png,REFER DRAW1NG NO.51743900172
+merge_9_r38-40_c4-7.png,REFER DRAWING NO.517543900210
+merge_10_r41-41_c4-7.png,REFER DRAWING NO.517543900158
+merge_11_r42-43_c4-7.png,517443900104
+merge_12_r44-44_c4-7.png,REFER DRAWING NO:5177643900112
+merge_13_r45-49_c4-7.png,REFER DRAWING NO:517443900141
+cell_r0_c0.png,50
+cell_r0_c1.png,CABLE TIE
+cell_r0_c2.png,34
+cell_r0_c3.png,743
+cell_r1_c0.png,49
+cell_r1_c1.png,"NYLON PIPE ASSY,T-CONN TO CLUTCH BOOSTER"
+cell_r1_c2.png,
+cell_r1_c3.png,220729
+cell_r2_c0.png,48
+cell_r2_c1.png,PIPE ASSY T-CONN TO PARKING AIR TANK
+cell_r2_c2.png,
+cell_r2_c3.png,52164300
+cell_r2_c4.png,1227
+cell_r2_c5.png,L
+cell_r2_c6.png,GREEN
+cell_r3_c0.png,47
+cell_r3_c1.png,PIPE ASSY PARKING AIR TANK TO NRV-1
+cell_r3_c2.png,
+cell_r3_c3.png,521643
+cell_r3_c4.png,1268
+cell_r3_c5.png,8
+cell_r3_c6.png,GREEN
+cell_r4_c0.png,46
+cell_r4_c1.png,PIPE ASSY DTV 21 TO DCV
+cell_r4_c2.png,
+cell_r4_c3.png,5216430
+cell_r4_c4.png,5258
+cell_r4_c5.png,L
+cell_r4_c6.png,YELLOW
+cell_r5_c0.png,45
+cell_r5_c1.png,PIPE ASSY FRONT AIR TANK TO DTV PORT 12
+cell_r5_c2.png,
+cell_r5_c3.png,52164
+cell_r5_c4.png,1141
+cell_r5_c5.png,8
+cell_r5_c6.png,WHITE
+cell_r6_c0.png,44
+cell_r6_c1.png,PIPE ASSY FRONT AIR TANK TO DTV PORT 12
+cell_r6_c2.png,
+cell_r6_c3.png,52164200
+cell_r6_c4.png,2630
+cell_r6_c5.png,8
+cell_r6_c6.png,WHITE
+cell_r7_c0.png,43
+cell_r7_c1.png,"NYLON PIPE ASSY,PRV TO AIR TANK"
+cell_r7_c2.png,
+cell_r7_c3.png,52164
+cell_r7_c4.png,256
+cell_r7_c5.png,8
+cell_r7_c6.png,WHITE
+cell_r8_c0.png,42
+cell_r8_c1.png,PIPE ASSY
+cell_r8_c2.png,
+cell_r8_c3.png,52164
+cell_r8_c4.png,3656
+cell_r8_c5.png,8
+cell_r8_c6.png,WHITE
+cell_r9_c0.png,4
+cell_r9_c1.png,PIPE ASSY MOD. VALVE TOTEE-CONN
+cell_r9_c2.png,
+cell_r9_c3.png,52014
+cell_r10_c0.png,40
+cell_r10_c1.png,PIPE ASSY RELAY DEL TO SBA-12 RH
+cell_r10_c2.png,
+cell_r10_c3.png,520
+cell_r11_c0.png,39
+cell_r11_c1.png,PIPE ASSY MOD. VALVE TO SBA-II LH
+cell_r11_c2.png,
+cell_r11_c3.png,520
+cell_r12_c0.png,38
+cell_r12_c1.png,PIPE ASSY
+cell_r12_c2.png,
+cell_r12_c3.png,520143
+cell_r13_c0.png,37
+cell_r13_c1.png,PIPE ASSY DTV PORT 12 TO TEE
+cell_r13_c2.png,
+cell_r13_c3.png,52014
+cell_r14_c0.png,36
+cell_r14_c1.png,PIPE ASSY
+cell_r14_c2.png,
+cell_r14_c3.png,5201430
+cell_r15_c0.png,35
+cell_r15_c1.png,PIPE ASSY
+cell_r15_c2.png,
+cell_r15_c3.png,52014
+cell_r16_c0.png,34
+cell_r16_c1.png,PIPE ASSY
+cell_r16_c2.png,
+cell_r16_c3.png,52014
+cell_r17_c0.png,33
+cell_r17_c1.png,PIPE ASSY SOLENOID TO ACRV SIGNAL
+cell_r17_c2.png,
+cell_r17_c3.png,52014
+cell_r18_c0.png,32
+cell_r18_c1.png,PIPE ASSY
+cell_r18_c2.png,
+cell_r18_c3.png,520143
+cell_r19_c0.png,31
+cell_r19_c1.png,PIPE ASSY
+cell_r19_c2.png,
+cell_r19_c3.png,52014300
+cell_r20_c0.png,30
+cell_r20_c1.png,PIPE ASSY PRV TO T-CONN
+cell_r20_c2.png,
+cell_r20_c3.png,520143
+cell_r21_c0.png,29
+cell_r21_c1.png,PIPE ASSY T-CONN TO ACRV
+cell_r21_c2.png,
+cell_r21_c3.png,52014
+cell_r22_c0.png,28
+cell_r22_c1.png,PIPE ASSY T-CONN TO SV SUPPLY
+cell_r22_c2.png,
+cell_r22_c3.png,520
+cell_r23_c0.png,21
+cell_r23_c1.png,PIPE ASSY DTV-22 TO T-CONN
+cell_r23_c2.png,
+cell_r23_c3.png,20
+cell_r24_c0.png,26
+cell_r24_c1.png,PIPE ASSY DCV I TO SOL. VALVE
+cell_r24_c2.png,
+cell_r24_c3.png,51754
+cell_r25_c0.png,25
+cell_r25_c1.png,PIPE ASSY T-CONN TO RELAY VALVE SUPPLY
+cell_r25_c2.png,
+cell_r25_c3.png,517440
+cell_r26_c0.png,24
+cell_r26_c1.png,PIPE ASSY APU 24 TO SPILT (CLUTCH BOOSTE
+cell_r26_c2.png,R
+cell_r26_c3.png,5174
+cell_r27_c0.png,23
+cell_r27_c1.png,PIPE ASSY RELAY VALVE TO TEE-CONN
+cell_r27_c2.png,
+cell_r27_c3.png,51744
+cell_r28_c0.png,22
+cell_r28_c1.png,PIPE ASSY HBV-22 TO TCV PORT-43
+cell_r28_c2.png,
+cell_r28_c3.png,5152430
+cell_r29_c0.png,21
+cell_r29_c1.png,PIPE ASSY HBV PORT-21 TO RELAY VALVE
+cell_r29_c2.png,
+cell_r29_c3.png,5152
+cell_r30_c0.png,20
+cell_r30_c1.png,PIPE ASSY NRV 2 TO HBV 1
+cell_r30_c2.png,
+cell_r30_c3.png,51524
+cell_r31_c0.png,19
+cell_r31_c1.png,PIPE ASSY TEE-3 TO TCV-42
+cell_r31_c2.png,
+cell_r31_c3.png,51524
+cell_r32_c0.png,18
+cell_r32_c1.png,PIPE ASSY TEE-CONN TO DTV PORT 11
+cell_r32_c2.png,
+cell_r32_c3.png,50804
+cell_r33_c0.png,7
+cell_r33_c1.png,PIPE ASSY T-CON TO PARKING RELAY INLET
+cell_r33_c2.png,
+cell_r33_c3.png,51744070
+cell_r34_c0.png,16
+cell_r34_c1.png,PIPE ASSY MOD. VALVE TO SBA-11 RH
+cell_r34_c2.png,
+cell_r34_c3.png,51744
+cell_r35_c0.png,15
+cell_r35_c1.png,PIPE ASSY RELAY DEL TO SBA 12 LH
+cell_r35_c2.png,
+cell_r35_c3.png,51744
+cell_r36_c0.png,4
+cell_r36_c1.png,PIPE ASSY TEE-CONN TO TCV-41
+cell_r36_c2.png,
+cell_r36_c3.png,517442000
+cell_r37_c0.png,13
+cell_r37_c1.png,PIPE ASSY NRV-2 TO T-CONN
+cell_r37_c2.png,
+cell_r37_c3.png,51744
+cell_r38_c0.png,12
+cell_r38_c1.png,PIPE ASSY APU-21 TO AIR TANK REAR
+cell_r38_c2.png,
+cell_r38_c3.png,51754
+cell_r39_c0.png,11
+cell_r39_c1.png,PIPE ASSY AIR TANK REAR TO T-CONN
+cell_r39_c2.png,
+cell_r39_c3.png,51754
+cell_r40_c0.png,10
+cell_r40_c1.png,PIPE ASSY APU-22 TO AIR TANK FRONT
+cell_r40_c2.png,
+cell_r40_c3.png,5175430
+cell_r41_c0.png,9
+cell_r41_c1.png,PIPE ASSY T-CONN TO SOLENOID VALVE
+cell_r41_c2.png,
+cell_r41_c3.png,51754
+cell_r42_c0.png,8
+cell_r42_c1.png,PIPE ASSY PRV TO T-CONN
+cell_r42_c2.png,
+cell_r42_c3.png,51754500
+cell_r43_c0.png,7
+cell_r43_c1.png,PIPE ASSY T-CONN TO TCV
+cell_r43_c2.png,
+cell_r43_c3.png,5175420
+cell_r44_c0.png,6
+cell_r44_c1.png,PIPE ASSY APU-23 TO PRV
+cell_r44_c2.png,
+cell_r44_c3.png,51744
+cell_r45_c0.png,5
+cell_r45_c1.png,PIPE ASSY TCV 12 TO RED COUPLING COIL
+cell_r45_c2.png,
+cell_r45_c3.png,51744
+cell_r46_c0.png,4
+cell_r46_c1.png,PIPE ASSY TCV 22 TO YELLOW COUPLING COIL
+cell_r46_c2.png,
+cell_r46_c3.png,51744
+cell_r47_c0.png,3
+cell_r47_c1.png,PIPE ASSY T-CONN TO FRONT LH-BC
+cell_r47_c2.png,
+cell_r47_c3.png,51744
+cell_r48_c0.png,2
+cell_r48_c1.png,PIPE ASSY T-CONN TO FRONT RH-BC
+cell_r48_c2.png,
+cell_r48_c3.png,517440
+cell_r49_c0.png,一
+cell_r49_c1.png,PIPE ASSY FRONT MOD. VALVE TO T-CONN
+cell_r49_c2.png,
+cell_r49_c3.png,5174
+cell_r50_c0.png,SN
+cell_r50_c1.png,PART DESCRIPTION
+cell_r50_c2.png,QTY
+cell_r50_c3.png,TML PART NO
+cell_r50_c4.png,PIPE CUT LENGTH(mm)
+cell_r50_c5.png,BUNCH 8 LOOSE
+cell_r50_c6.png,COLOUR CODING
+cell_r50_c7.png,REFERANCE DRG NO.
